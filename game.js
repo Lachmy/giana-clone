@@ -24,16 +24,16 @@ let platforms;
 let cursors;
 
 function preload() {
-    this.load.image('background', 'assets/background.png');
-    this.load.image('platform', 'assets/platform.png');
-    this.load.spritesheet('player', 'assets/player.png', { frameWidth: 32, frameHeight: 48 });
+    this.load.image('background', 'assets/background.png'); // Pozadí
+    this.load.image('platform', 'assets/platform.png'); // Platforma
+    this.load.spritesheet('player', 'assets/player.png', { frameWidth: 32, frameHeight: 48 }); // Postava
 }
 
 function create() {
     this.add.image(400, 300, 'background');
 
     platforms = this.physics.add.staticGroup();
-    platforms.create(400, 580, 'platform').setScale(2).refreshBody();
+    platforms.create(400, 580, 'platform').setScale(1).refreshBody();
     
     player = this.physics.add.sprite(100, 450, 'player');
     player.setBounce(0.2);

@@ -30,7 +30,7 @@ function preload() {
 }
 
 function create() {
-    this.add.image(400, 300, 'background');
+    this.add.image(400, 300, 'background').setDepth(-1); // Oprava pozadí, posunuto dozadu
 
     platforms = this.physics.add.staticGroup();
     platforms.create(400, 580, 'platform').setScale(1).refreshBody();
@@ -38,6 +38,7 @@ function create() {
     player = this.physics.add.sprite(100, 450, 'player');
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
+    player.setScale(1.5); // Oprava viditelnosti postavy
     
     this.physics.add.collider(player, platforms);
     
